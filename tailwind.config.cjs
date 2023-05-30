@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
-const imgUrl = "https://source.unsplash.com/random/1920x1080/?nature,tree";
-
+const desktopImgUrl = "https://source.unsplash.com/random/1920x1080/?tree";
+const mobileImgUrl = "https://source.unsplash.com/random/1080x1920/?tree";
+const darkenGradient = [0.3, 0.2];
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -13,7 +14,8 @@ module.exports = {
         preloadBg: "rgb(5 5 5)",
       },
       backgroundImage: {
-        backdrop: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url('${imgUrl}')`,
+        backdropDesktop: `linear-gradient(rgba(0, 0, 0, ${darkenGradient[0]}), rgba(0, 0, 0, ${darkenGradient[1]})), url('${desktopImgUrl}')`,
+        backdropMobile: `linear-gradient(rgba(0, 0, 0, ${darkenGradient[0]}), rgba(0, 0, 0, ${darkenGradient[1]})), url('${mobileImgUrl}')`,
       },
     },
   },
